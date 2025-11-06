@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinnablue - Cantik Dipandang, Bermanfaat bagi Kesehatan</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP (Animasi) CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Kustomisasi Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b3c7a', // Ungu gelap kebiruan
+                        secondary: '#a37a6b', // Coklat kayu manis
+                        accent: '#f4f1e9', // Broken white / cream
+                        textDark: '#333333',
+                        textLight: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+    <style>
+        /* Optimasi rendering animasi */
+        .gsap-anim {
+            will-change: transform, opacity;
+        }
+    </style>
+</head>
+<body class="font-body bg-accent text-textDark antialiased">
+
+    <!-- ===== Header ===== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-accent/90 backdrop-blur-md shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-heading text-3xl font-bold text-primary">
+                Cinnablue
+            </a>
+            <a href="#order" class="cta-button hidden sm:inline-block bg-secondary text-textLight font-bold py-2 px-6 rounded-full transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg">
+                Pesan Sekarang
+            </a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ===== Hero Section ===== -->
+        <section id="hero" class="min-h-screen pt-32 pb-16 md:pt-0 flex items-center bg-accent">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Kolom Teks Hero -->
+                <div class="hero-text gsap-anim">
+                    <h1 class="font-heading text-4xl md:text-6xl font-bold text-primary leading-tight">
+                        Temukan Ketenangan dalam Secangkir Cinnablue.
+                    </h1>
+                    <p class="mt-4 text-xl text-secondary font-heading">
+                        Cantik Dipandang, Bermanfaat bagi Kesehatan.
+                    </p>
+                    <p class="mt-6 text-lg text-textDark max-w-lg">
+                        Perpaduan premium Bunga Telang, kehangatan Kayu Manis, dan sentuhan Madu Murni. Minuman ini diracik untuk memanjakan mata sekaligus menenangkan jiwa Anda.
+                    </p>
+                    
+                    <!-- Harga (Price Anchoring) -->
+                    <div class="mt-8">
+                        <p class="text-sm text-secondary font-bold">(Promo Launching Terbatas!)</p>
+                        <div class="flex items-baseline gap-3 mt-2">
+                            <span class="text-4xl font-bold text-primary">Rp 15.000</span>
+                            <span class="text-2xl line-through text-gray-500">Rp 20.000</span>
+                        </div>
+                    </div>
+
+                    <!-- Tombol CTA Utama -->
+                    <a href="#order" id="cta-hero" class="cta-button inline-block bg-primary text-textLight font-bold text-lg py-4 px-10 rounded-full mt-10 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl transform">
+                        Coba Ketenangan Cinnablue Sekarang
+                    </a>
+                </div>
+
+                <!-- Kolom Gambar Hero -->
+                <div class="hero-image gsap-anim">
+                    <img src="gambar_2.jpg" 
+                         alt="Penyajian teh Cinnablue dengan teko, cangkir, madu, dan kemasan produk di atas nampan kayu." 
+                         class="w-full h-auto rounded-2xl shadow-2xl object-cover"
+                         onerror="this.src='https://placehold.co/600x600/3b3c7a/f4f1e9?text=Cinnablue'"
+                         loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Benefits Section ===== -->
+        <section id="manfaat" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-headline text-center font-heading text-4xl md:text-5xl font-bold text-primary gsap-anim">
+                    Kebaikan Alami di Setiap Gelas
+                </h2>
+                <p class="section-subheadline text-center text-lg text-textDark max-w-2xl mx-auto mt-4 gsap-anim">
+                    Cinnablue diracik dari tiga bahan alami terbaik, masing-masing dengan manfaat uniknya untuk tubuh dan pikiran Anda.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center mt-16">
+                    <!-- Gambar Bahan-bahan -->
+                    <div class="benefit-image gsap-anim">
+                        <img src="gambar_1.jpg" 
+                             alt="Bahan-bahan Cinnablue: kemasan produk, bunga telang kering, batang kayu manis, dan madu." 
+                             class="w-full h-auto rounded-2xl shadow-xl object-cover"
+                             onerror="this.src='https://placehold.co/600x500/a37a6b/f4f1e9?text=Bahan+Alami'"
+                             loading="lazy">
+                    </div>
+
+                    <!-- Teks Manfaat -->
+                    <div class="benefit-text space-y-8">
+                        <div class="gsap-anim">
+                            <h3 class="font-heading text-3xl font-bold text-primary">Bunga Telang</h3>
+                            <p class="mt-2 text-lg">
+                                Dikenal dengan warna birunya yang cantik, Bunga Telang kaya akan <strong>antioksidan</strong> yang membantu melawan radikal bebas dan memberikan efek relaksasi.
+                            </p>
+                        </div>
+                        <div class="gsap-anim">
+                            <h3 class="font-heading text-3xl font-bold text-primary">Kayu Manis</h3>
+                            <p class="mt-2 text-lg">
+                                Memberikan <strong>aroma rempah yang hangat</strong> dan menenangkan. Kayu manis juga dikenal baik untuk membantu menjaga kestabilan gula darah.
+                            </p>
+                        </div>
+                        <div class="gsap-anim">
+                            <h3 class="font-heading text-3xl font-bold text-primary">Madu Murni</h3>
+                            <p class="mt-2 text-lg">
+                                Sentuhan <strong>pemanis alami</strong> yang tidak hanya lezat tapi juga penuh manfaat kesehatan, melengkapi cita rasa Cinnablue menjadi sempurna.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== How-to Section ===== -->
+        <section id="cara-penyajian" class="py-24 bg-accent">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <!-- Teks Cara Penyajian -->
+                <div class="howto-text gsap-anim">
+                    <h2 class="section-headline font-heading text-4xl md:text-5xl font-bold text-primary gsap-anim">
+                        Satu Menit Menuju Relaksasi
+                    </h2>
+                    <p class="section-subheadline text-lg text-textDark max-w-lg mt-4 gsap-anim">
+                        Nikmati Cinnablue dengan cara yang sangat mudah dan praktis.
+                    </p>
+                    <ol class="mt-8 space-y-6 list-none">
+                        <li class="flex items-start text-lg gsap-anim">
+                            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-secondary text-textLight font-bold rounded-full mr-4">1</span>
+                            Seduh 1 sendok teh Cinnablue dengan air panas (bukan mendidih, sekitar 90°C).
+                        </li>
+                        <li class="flex items-start text-lg gsap-anim">
+                            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-secondary text-textLight font-bold rounded-full mr-4">2</span>
+                            Diamkan selama 5-7 menit hingga warna biru pekat yang cantik keluar sempurna.
+                        </li>
+                        <li class="flex items-start text-lg gsap-anim">
+                            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-secondary text-textLight font-bold rounded-full mr-4">3</span>
+                            Saring dan tambahkan madu murni sesuai selera Anda.
+                        </li>
+                        <li class="flex items-start text-lg gsap-anim">
+                            <span class="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-secondary text-textLight font-bold rounded-full mr-4">4</span>
+                            Aduk perlahan dan nikmati ketenangan dalam setiap tegukan.
+                        </li>
+                    </ol>
+                </div>
+                
+                <!-- Gambar Cara Penyajian -->
+                <div class="howto-image gsap-anim">
+                    <img src="gambar_3.jpg" 
+                         alt="Segelas teh Cinnablue biru yang masih mengepulkan uap hangat." 
+                         class="w-full h-auto rounded-2xl shadow-xl object-cover"
+                         onerror="this.src='https://placehold.co/600x700/3b3c7a/f4f1e9?text=Cara+Penyajian'"
+                         loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Final CTA Section ===== -->
+        <section id="order" class="py-24 bg-primary text-textLight">
+            <div class="container mx-auto px-6 text-center max-w-2xl">
+                <div class="final-cta-content gsap-anim">
+                    <h2 class="section-headline font-heading text-4xl md:text-5xl font-bold">
+                        Klaim Ketenangan Anda Sekarang
+                    </h2>
+                    <p class="section-subheadline text-lg text-accent mt-4">
+                        Jangan lewatkan harga promo launching terbatas kami. Pesan Cinnablue hari ini dan rasakan sendiri manfaatnya.
+                    </p>
+                    
+                    <img src="gambar_4.png" 
+                         alt="Kemasan produk Cinnablue pouch." 
+                         class="w-full max-w-xs mx-auto my-8 rounded-xl shadow-lg"
+                         onerror="this.src='https://placehold.co/400x400/f4f1e9/3b3c7a?text=Cinnablue+Pouch'"
+                         loading="lazy">
+
+                    <!-- Harga -->
+                    <p class="text-sm font-bold text-accent">(Promo Terbatas!)</p>
+                    <div class="flex items-baseline justify-center gap-3 mt-2">
+                        <span class="text-4xl font-bold text-white">Rp 15.000</span>
+                        <span class="text-2xl line-through text-gray-400">Rp 20.000</span>
+                    </div>
+
+                    <!-- Tombol CTA Final -->
+                    <a href="#order" id="cta-final" class="cta-button inline-block bg-secondary text-textDark font-bold text-lg py-4 px-10 rounded-full mt-10 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:bg-accent transform">
+                        Pesan via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer class="py-8 bg-accent border-t border-gray-300">
+        <div class="container mx-auto px-6 text-center text-textDark">
+            <p class="font-bold">Cinnablue</p>
+            <p class="text-sm mt-1">Yogyakarta, Indonesia</p>
+            <p class="text-sm mt-1">Kontak: +62 823-4022-1229</p>
+            <p class="text-xs mt-4 text-gray-500">
+                &copy; 2025 Cinnablue. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== Sticky Mobile CTA ===== -->
+    <div id="sticky-cta" class="md:hidden fixed bottom-0 left-0 right-0 bg-white p-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)] z-40 transform translate-y-full gsap-anim">
+        <a href="#order" id="cta-sticky" class="cta-button w-full text-center bg-primary text-textLight font-bold text-lg py-3 px-6 rounded-full transition-all duration-300 ease-in-out flex justify-center items-center gap-2">
+            Pesan Sekarang (Promo!)
+        </a>
+    </div>
+
+    <!-- ===== JavaScript Logic ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Integrasi WhatsApp ---
+            const waNumber = '6281234567890'; // Nomor tujuan dari brief
+            const waMessage = encodeURIComponent('Halo Cinnablue, saya mau pesan Teh Bunga Telang Kayu Manis.');
+            const waLink = `https://wa.me/${waNumber}?text=${waMessage}`;
+
+            const ctaButtons = document.querySelectorAll('.cta-button');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.open(waLink, '_blank');
+                });
+            });
+
+            // --- Animasi GSAP ---
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 1. Animasi Hero (On Load)
+            gsap.from('.hero-text > *', {
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                stagger: 0.15,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+
+            gsap.from('.hero-image', {
+                opacity: 0,
+                scale: 0.9,
+                duration: 1.2,
+                delay: 0.5,
+                ease: 'power3.out'
+            });
+
+            // 2. Animasi Sticky CTA (Mobile)
+            gsap.to('#sticky-cta', {
+                scrollTrigger: {
+                    trigger: '#hero',
+                    start: 'bottom 80%', // Muncul setelah hero di-scroll
+                    toggleActions: 'play none none reverse',
+                },
+                y: 0,
+                ease: 'power3.out',
+                duration: 0.5
+            });
+
+            // 3. Animasi Section Umum (Fade-up on scroll)
+            gsap.utils.toArray('.section-headline, .section-subheadline').forEach(elem => {
+                gsap.from(elem, {
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none',
+                    },
+                    opacity: 0,
+                    y: 40,
+                    duration: 0.8,
+                    ease: 'power2.out'
+                });
+            });
+            
+            // 4. Animasi Section Manfaat (Staggered)
+            gsap.from('.benefit-image', {
+                scrollTrigger: {
+                    trigger: '.benefit-image',
+                    start: 'top 85%',
+                    toggleActions: 'play none none none',
+                },
+                opacity: 0,
+                x: -50,
+                duration: 1,
+                ease: 'power2.out'
+            });
+
+            gsap.utils.toArray('.benefit-text > div').forEach((elem, i) => {
+                gsap.from(elem, {
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none',
+                    },
+                    opacity: 0,
+                    x: 50,
+                    duration: 0.8,
+                    delay: i * 0.2, // Efek staggered
+                    ease: 'power2.out'
+                });
+            });
+
+            // 5. Animasi Section Cara Penyajian (Staggered)
+            gsap.from('.howto-image', {
+                scrollTrigger: {
+                    trigger: '.howto-image',
+                    start: 'top 85%',
+                    toggleActions: 'play none none none',
+                },
+                opacity: 0,
+                x: 50,
+                duration: 1,
+                ease: 'power2.out'
+            });
+
+            gsap.utils.toArray('.howto-text > *, .howto-text li').forEach((elem, i) => {
+                gsap.from(elem, {
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none',
+                    },
+                    opacity: 0,
+                    x: -50,
+                    duration: 0.8,
+                    delay: i * 0.1, // Staggered
+                    ease: 'power2.out'
+                });
+            });
+
+            // 6. Animasi Final CTA (Scale-in)
+            gsap.from('.final-cta-content', {
+                scrollTrigger: {
+                    trigger: '.final-cta-content',
+                    start: 'top 80%',
+                    toggleActions: 'play none none none',
+                },
+                opacity: 0,
+                scale: 0.9,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+        });
+    </script>
+
+</body>
+</html>
